@@ -25,7 +25,7 @@ export default function Layout() {
       <CryptoTracker />
       {/* <CustomerTestimonials /> */}
       <MobileApp />
-      {/* <SmartsuppChat /> */}
+      <SmartsuppChat />
       <Footer />
     </>
   );

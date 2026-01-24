@@ -8,13 +8,13 @@ const SmartsuppChat = () => {
     script.type = "text/javascript";
     script.innerHTML = `
     var _smartsupp = _smartsupp || {};
-     _smartsupp.key = '96540d08e39dc1e4de3db9e505b7d07c4394aa97';
-     window.smartsupp||(function(d) {
-     var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-     s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-     c.type='text/javascript';c.charset='utf-8';c.async=true;
-     c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-    })(document);
+_smartsupp.key = '0aee896eecba51215b00050793dbdf4aa19bc057';
+window.smartsupp||(function(d) {
+var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+c.type='text/javascript';c.charset='utf-8';c.async=true;
+c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+})(document);
     `;
 
     // Add to document head
