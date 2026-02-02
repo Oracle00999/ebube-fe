@@ -10,6 +10,7 @@ import {
   ClockIcon,
   XCircleIcon,
   BellIcon,
+  ShieldCheckIcon,
 } from "@heroicons/react/24/outline";
 import Cardlogo from "../assets/web3image.jpg";
 import BtcLogo from "../assets/btc.svg";
@@ -575,9 +576,8 @@ const UserDashboard = () => {
             </span>
           </Link>
 
-          <a
-            href="https://www.moonpay.com/buy/xlm"
-            target="_blank"
+          <Link
+            to="/kyc-verify"
             className="flex flex-col items-center justify-center p-4 backdrop-blur-sm rounded-xl border transition-all group"
             style={{
               backgroundColor: "rgba(255, 255, 255, 0.1)",
@@ -597,15 +597,15 @@ const UserDashboard = () => {
               className="h-10 w-10 rounded-full flex items-center justify-center mb-2 transition-colors group-hover:scale-105"
               style={{ backgroundColor: "rgba(47, 128, 237, 0.7)" }}
             >
-              <PlusCircleIcon
+              <ShieldCheckIcon
                 className="h-5 w-5"
                 style={{ color: "#FFFFFF" }}
               />
             </div>
             <span className="text-sm font-medium" style={{ color: "#F5F7FA" }}>
-              Buy
+              Verify
             </span>
-          </a>
+          </Link>
         </div>
       </div>
 

@@ -19,6 +19,7 @@ c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
 
     // Add to document head
     document.head.appendChild(script);
+    // 974
 
     // Optional: Auto-open chat after 30 seconds if user hasn't interacted
     // setTimeout(() => {

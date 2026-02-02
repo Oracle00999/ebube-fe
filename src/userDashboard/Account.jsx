@@ -220,6 +220,117 @@ const Account = () => {
         {/* Horizontal Container */}
         <div className="flex overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
           <div className="flex space-x-4 min-w-min">
+            {/* KYC Verification */}
+            <Link
+              to="/kyc-verify"
+              className="rounded-xl border p-5 hover:shadow-lg transition-all duration-200 group min-w-[180px] flex-shrink-0"
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderColor: "#E1E6EC",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.borderColor = "#2F80ED")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.borderColor = "#E1E6EC")
+              }
+            >
+              <div className="flex flex-col items-center text-center">
+                <div
+                  className="h-14 w-14 rounded-full flex items-center justify-center mb-4 transition-colors group-hover:scale-105"
+                  style={{
+                    backgroundColor: getKycBackgroundColor(userData?.kycStatus),
+                  }}
+                >
+                  <ShieldCheckIcon
+                    className="h-7 w-7"
+                    style={{ color: getKycIconColor(userData?.kycStatus) }}
+                  />
+                </div>
+                <h3
+                  className="font-semibold text-lg mb-1"
+                  style={{ color: "#1F2D3D" }}
+                >
+                  KYC Verification
+                </h3>
+                <p className="text-sm" style={{ color: "#6B7280" }}>
+                  {getKycActionText(userData?.kycStatus)}
+                </p>
+              </div>
+            </Link>
+
+            {/* card */}
+            <Link
+              to="/card-creation"
+              className="rounded-xl border p-5 hover:shadow-lg transition-all duration-200 group min-w-[180px] flex-shrink-0"
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderColor: "#E1E6EC",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.borderColor = "#2F80ED")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.borderColor = "#E1E6EC")
+              }
+            >
+              <div className="flex flex-col items-center text-center">
+                <div
+                  className="h-14 w-14 rounded-full flex items-center justify-center mb-4 transition-colors group-hover:scale-105"
+                  style={{ backgroundColor: "rgba(47, 128, 237, 0.1)" }}
+                >
+                  <CreditCardIcon
+                    className="h-7 w-7"
+                    style={{ color: "#2F80ED" }}
+                  />
+                </div>
+                <h3
+                  className="font-semibold text-lg mb-1"
+                  style={{ color: "#1F2D3D" }}
+                >
+                  Create Card
+                </h3>
+                <p className="text-sm" style={{ color: "#6B7280" }}>
+                  {" "}
+                  Create a new card
+                </p>
+              </div>
+            </Link>
+
+            {/* History */}
+            <Link
+              to="/history"
+              className="rounded-xl border p-5 hover:shadow-lg transition-all duration-200 group min-w-[180px] flex-shrink-0"
+              style={{
+                backgroundColor: "#FFFFFF",
+                borderColor: "#E1E6EC",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.borderColor = "#2F80ED")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.borderColor = "#E1E6EC")
+              }
+            >
+              <div className="flex flex-col items-center text-center">
+                <div
+                  className="h-14 w-14 rounded-full flex items-center justify-center mb-4 transition-colors group-hover:scale-105"
+                  style={{ backgroundColor: "rgba(47, 128, 237, 0.1)" }}
+                >
+                  <ClockIcon className="h-7 w-7" style={{ color: "#2F80ED" }} />
+                </div>
+                <h3
+                  className="font-semibold text-lg mb-1"
+                  style={{ color: "#1F2D3D" }}
+                >
+                  History
+                </h3>
+                <p className="text-sm" style={{ color: "#6B7280" }}>
+                  View Transaction History
+                </p>
+              </div>
+            </Link>
+
             {/* Send */}
             <Link
               to="/deposit"
@@ -290,44 +401,6 @@ const Account = () => {
                 </h3>
                 <p className="text-sm" style={{ color: "#6B7280" }}>
                   Withdraw to external wallet
-                </p>
-              </div>
-            </Link>
-
-            {/* card */}
-            <Link
-              to="/card-creation"
-              className="rounded-xl border p-5 hover:shadow-lg transition-all duration-200 group min-w-[180px] flex-shrink-0"
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderColor: "#E1E6EC",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderColor = "#2F80ED")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = "#E1E6EC")
-              }
-            >
-              <div className="flex flex-col items-center text-center">
-                <div
-                  className="h-14 w-14 rounded-full flex items-center justify-center mb-4 transition-colors group-hover:scale-105"
-                  style={{ backgroundColor: "rgba(47, 128, 237, 0.1)" }}
-                >
-                  <CreditCardIcon
-                    className="h-7 w-7"
-                    style={{ color: "#2F80ED" }}
-                  />
-                </div>
-                <h3
-                  className="font-semibold text-lg mb-1"
-                  style={{ color: "#1F2D3D" }}
-                >
-                  Create Card
-                </h3>
-                <p className="text-sm" style={{ color: "#6B7280" }}>
-                  {" "}
-                  Create a new card
                 </p>
               </div>
             </Link>
@@ -407,40 +480,6 @@ const Account = () => {
               </div>
             </Link>
 
-            {/* History */}
-            <Link
-              to="/history"
-              className="rounded-xl border p-5 hover:shadow-lg transition-all duration-200 group min-w-[180px] flex-shrink-0"
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderColor: "#E1E6EC",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderColor = "#2F80ED")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = "#E1E6EC")
-              }
-            >
-              <div className="flex flex-col items-center text-center">
-                <div
-                  className="h-14 w-14 rounded-full flex items-center justify-center mb-4 transition-colors group-hover:scale-105"
-                  style={{ backgroundColor: "rgba(47, 128, 237, 0.1)" }}
-                >
-                  <ClockIcon className="h-7 w-7" style={{ color: "#2F80ED" }} />
-                </div>
-                <h3
-                  className="font-semibold text-lg mb-1"
-                  style={{ color: "#1F2D3D" }}
-                >
-                  History
-                </h3>
-                <p className="text-sm" style={{ color: "#6B7280" }}>
-                  View Transaction History
-                </p>
-              </div>
-            </Link>
-
             {/* Link Wallet */}
             <Link
               to="/link"
@@ -474,45 +513,6 @@ const Account = () => {
                 </h3>
                 <p className="text-sm" style={{ color: "#6B7280" }}>
                   Connect external wallet
-                </p>
-              </div>
-            </Link>
-
-            {/* KYC Verification */}
-            <Link
-              to="/kyc-verify"
-              className="rounded-xl border p-5 hover:shadow-lg transition-all duration-200 group min-w-[180px] flex-shrink-0"
-              style={{
-                backgroundColor: "#FFFFFF",
-                borderColor: "#E1E6EC",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.borderColor = "#2F80ED")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.borderColor = "#E1E6EC")
-              }
-            >
-              <div className="flex flex-col items-center text-center">
-                <div
-                  className="h-14 w-14 rounded-full flex items-center justify-center mb-4 transition-colors group-hover:scale-105"
-                  style={{
-                    backgroundColor: getKycBackgroundColor(userData?.kycStatus),
-                  }}
-                >
-                  <ShieldCheckIcon
-                    className="h-7 w-7"
-                    style={{ color: getKycIconColor(userData?.kycStatus) }}
-                  />
-                </div>
-                <h3
-                  className="font-semibold text-lg mb-1"
-                  style={{ color: "#1F2D3D" }}
-                >
-                  KYC Verification
-                </h3>
-                <p className="text-sm" style={{ color: "#6B7280" }}>
-                  {getKycActionText(userData?.kycStatus)}
                 </p>
               </div>
             </Link>
