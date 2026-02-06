@@ -466,6 +466,7 @@ const UserDashboard = () => {
           <div className="flex items-center mb-4 md:mb-0"></div>
 
           <div className="text-left">
+            <div className="mb-2">{getKycStatusBadge(userData?.kycStatus)}</div>
             <div className="text-sm mb-1" style={{ color: "#8FA6BF" }}>
               Total Balance
             </div>
